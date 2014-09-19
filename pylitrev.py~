@@ -32,7 +32,6 @@ def processLanguage():
       chunkParser = nltk.RegexpParser(chunkGram)
       chunked = chunkParser.parse(tagged)
       print chunked
-      chunked.draw()
 
       time.sleep(555)
 
