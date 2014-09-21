@@ -29,12 +29,16 @@ def processLanguage():
       tokenized = nltk.word_tokenize(item)
       tagged = nltk.pos_tag(tokenized)
 
-      print tagged
+      print tagged 
+
       chunkGram = r"""Chunk:  {<RB\w?>*<VB\w?>*<NNP>}"""
       chunkParser = nltk.RegexpParser(chunkGram)
       chunked = chunkParser.parse(tagged)
       print chunked
-      chunked.draw()
+      #chunked.draw()
+
+      namedEnt = nltk.ne_chunk(taggedm binary=True)
+      namedEnt.draw()
 
       time.sleep(555)
 
