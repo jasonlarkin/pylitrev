@@ -3,15 +3,8 @@ import urllib2
 import nltk
 import re
 import time
-import sqlite3
 
 from gi.repository import Poppler, Gtk
-
-conn = sqlite3.connect('knowledgeBase.db')
-c = conn.cursor()
-
-def createDB():
-  c.execute()
 
 def main_grab_citation():
   url = "http://journals.aps.org/prb/export/10.1103/PhysRevB.46.6131"
@@ -44,7 +37,7 @@ def processLanguage():
       print chunked
       #chunked.draw()
 
-      namedEnt = nltk.ne_chunk(tagged, binary=True)
+      namedEnt = nltk.ne_chunk(taggedm binary=True)
       namedEnt.draw()
 
       time.sleep(555)
